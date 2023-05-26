@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {%load static%}
+    <link rel="stylesheet" href = "{% static 'calculator/style.css' %}">
+    <script src = "{% static 'calculator/calculator.js' %}"></script>
+    <title>
+        Sion's Calculator
+    </title>
+</head>
+
+<body> 
+
+<h1>Sion's Calculator</h1>
+<p> Tip: Use the Clear button to reset the calculator.</p>
+<table class="calculator" onclick = "displayOnScreen(event)">
+    <tr>
+        <td colspan ='3'><input class="display" value = "0" type ="text" id= "result" disabled /> </td>
+        <td><input type="button" value="Clear" onclick= "clearScreen(this)" id = btn /> </td>
+        <label for = "result">Result</label><br>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td> <input type = "button" value="/"> </td>
+    </tr>
+    <tr>
+        <td><input type ="button" value="7" /> </td>
+        <td><input type ="button" value="8" /> </td>
+        <td><input type ="button" value="9" /> </td>
+        <td><input type ="button" value="*" /> </td>
+    </tr>
+    <tr>
+        <td><input type ="button" value="4"/> </td>
+        <td><input type ="button" value="5"/> </td>
+        <td><input type ="button" value="6" /> </td>
+        <td><input type ="button" value="-" /> </td>
+    </tr>
+    <tr>
+        <td><input type ="button" value="1" /> </td>
+        <td><input type ="button" value="2" /> </td>
+        <td><input type ="button" value="3"/> </td>
+        <td><input type ="button" value="+"/> </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type ="button" value="0" /> </td>
+        <td></td>
+        <td><input type = "button" value = "="/></td>
+    </tr>
+    
+</table>
+</body>
+
+</html>
