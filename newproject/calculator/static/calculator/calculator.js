@@ -2,7 +2,6 @@ let prevclick;
 function displayOnScreen(e){
     let display = document.getElementById("result");
     const targetEl = e.target;
-    console.log(e.target.value, " : ", e.currentTarget);
     
     if (prevclick === undefined) {
 
