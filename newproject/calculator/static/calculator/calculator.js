@@ -2,33 +2,27 @@ let prevclick;
 function displayOnScreen(e){
     let display = document.getElementById("result");
     const targetEl = e.target;
-
-    display.value = targetEl.value;
-    // const buttons = document.querySelectorAll("button");
     console.log(e.target.value, " : ", e.currentTarget);
-//             if (prevclick === undefined) {
-        
-//                 display.value = input;
+    
+    if (prevclick === undefined) {
 
-//             } else if (input === "=") {
-        
-//                 calculateResult();
-    
-//             } else if (prevclick === "=" && typeof input == "number" ) {
-    
-//                 display.value = input
-    
-//             } else {
-    
-//                 display.value += input;
-    
-//             }
-//             prevclick = input;
-//         }   
-//     }) 
-// })
-}
+        display.value = targetEl.value;
 
+    } else if (targetEl.value === "=") {
+
+        calculateResult();
+
+    } else if (prevclick === "=" && typeof targetEl.value == "number" ) {
+
+        display.value = targetEl.value
+
+    } else {
+
+        display.value += targetEl.value;
+
+    }
+    prevclick = targetEl.value;
+}   
 function calculateResult(){
     let result = document.getElementById("result");
     result.value = eval(result.value);
@@ -36,5 +30,5 @@ function calculateResult(){
 
 function clearScreen(){
     let display = document.getElementById("result");
-    display.value = "0";
+    display.value = "";
 }
