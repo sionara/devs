@@ -4,11 +4,12 @@ const operator = ["+", "-", "*", "/"];
 function displayOnScreen(e){
     let display = document.getElementById("screen");
     const targetEl = e.target;
-    console.log("displayfunction ran.")
-    console.log(!isNaN(targetEl.value));
-    if (targetEl.value !== undefined) {
-        if (prevclick === undefined) {
 
+    if (targetEl.value || targetEl.value === '0') {
+        if (!prevclick) {
+            if (operator.includes(targetEl.value)){
+                return
+            }
             display.value = targetEl.value;
 
         } else if (targetEl.value === "=") {
