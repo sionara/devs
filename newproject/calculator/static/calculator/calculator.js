@@ -1,38 +1,40 @@
-let prevclick;
-// let display = document.getElementById("screen"); //putting it here does not work.
+let prevclick;  //&& !isNaN(targetEl.value) 
+// let display = document.getElementById("screen"); //putting it here does not work. 
 const operator = ["+", "-", "*", "/"];
 function displayOnScreen(e){
     let display = document.getElementById("screen");
     const targetEl = e.target;
-
-    if (targetEl.value || targetEl.value === '0') {
-        if (!prevclick) {
-            if (operator.includes(targetEl.value)){
+    console.log(targetEl === display)
+    if (targetEl.value && targetEl !== display/*|| targetEl.value === "0"*/) { //this is for case when user presses outside the buttons, but inside table. also "0" is considered false boolean, so we need to include to count as true
+        if (operator.includes(targetEl.value)){
+            if (!prevclick || operator.includes(prevclick) || prevclick === "Clear" ){
                 return
             }
-            display.value = targetEl.value;
-
+            display.value += targetEl.value;
         } else if (targetEl.value === "=") {
 
             calculateResult();
 
-        } else if (prevclick === "=" //&& !isNaN(targetEl.value) 
-        
+        } else if (prevclick === "="
         && operator.includes(targetEl.value) === false)  {
-            console.log("new calculation begins");
+            
             display.value = targetEl.value
 
         } else {
-
-            display.value += targetEl.value;
-
+            display.value += targetEl.value
         }
     prevclick = targetEl.value;
     }
 }   
 function calculateResult(){
     let display = document.getElementById("screen");
-    display.value = eval(display.value);
+    let result = eval(display.value);
+    if (!result) {
+        display.value = "Please input some numbers."
+    } else {
+        display.value = result
+    }
+
 }
 
 function clearScreen(e){
@@ -40,5 +42,8 @@ function clearScreen(e){
 
     let display = document.getElementById("screen");
     display.value = ""
+    prevclick = "Clear"
     e.stopPropagation();
 }
+
+// press number, then clear. then pressing operator will be displayed. 
