@@ -20,5 +20,6 @@ from calculator import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('calculator/', views.homepage, name="homepage")
+    path('calculator/', views.homepage, name="homepage"),
+    path('boxtest/', views.boxtest, name = "boxtest")
 ]

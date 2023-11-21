@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {%load static%}
+    <link rel="stylesheet" href = "{% static 'calculator/style1.css' %}">
+    <script src = "{% static 'calculator/calculator2.js' %}"></script>
+</head>
+<body>
+    <div class = "container">
+        <div class = "wrapper">
+            <div class = "display">
+                <div class = "prev-number"> 123 +</div>
+                <div class = "curr-number"> 456 = </div>
+            </div>
+            <div class="calc"> 
+                <div class = "item">
+                    <button>%</button>
+                    <button>CE</button>
+                    <button>C</button>
+                    <button>Backspace</button>
+                </div>
+                <div class = "item">
+                    <button>1/x</button>
+                    <button>x^2</button>
+                    <button>sqrt</button>
+                    <button>/</button>
+                </div>
+                <div class = "item">
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                    <button>*</button>
+                </div>
+                <div class = "item">
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button>-</button>
+                </div>
+                <div class = "item">
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>+</button>
+                </div>
+                <div class = "item">
+                    <button>+/-</button>
+                    <button>0</button>
+                    <button>.</button>
+                    <button>=</button>
+                </div>  
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

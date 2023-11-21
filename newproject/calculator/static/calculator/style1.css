@@ -1,0 +1,57 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: normal;
+
+}
+body{
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, orange, black);
+}
+.container {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-style: solid;
+    border-width: 5px;
+    border-color: blue;
+    margin: 0 auto;
+    /* border-style: solid;
+    border-width: 5px;
+    border-color: red;
+
+     width: 500px
+    margin: auto;*/
+}
+
+.wrapper{
+    border-style: solid;
+    border-width: 5px;
+    border-color: blue;
+    margin: 0 auto;
+}
+
+.item {
+    display: flex;
+    border: 1px solid white;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.item > button {
+    font-size: 2rem;
+    width: 100%;
+}
+
+.display{
+    display:flex;
+    background-color: black;
+    align-items: flex-end;
+    height: 100px;
+    justify-content: space-between;
+    flex-direction: column;
+}

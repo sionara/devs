@@ -5,3 +5,7 @@ from django.http import HttpResponse
 def homepage(request):
     template = loader.get_template("calculator/index.html")
     return HttpResponse(template.render())
+
+def boxtest(request):
+    template = loader.get_template("calculator/position_text.html")
+    return HttpResponse(template.render())

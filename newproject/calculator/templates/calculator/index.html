@@ -2,7 +2,7 @@
 <html>
 <head>
     {%load static%}
-    <link rel="stylesheet" href = "{% static 'calculator/style.css' %}">
+    <link rel="stylesheet" href ="{% static 'calculator/style.css' %}">
     <script src = "{% static 'calculator/calculator.js' %}"></script>
     <title>
         Sion's Calculator
@@ -17,7 +17,6 @@
     <tr>
         <td colspan ='3'><input class="display" value = "" type ="text" id= "screen" disabled/> </td>
         <td><input type="button" value="Clear" onclick= "clearScreen(event)" id = btn /> </td>
-        <label for = "result">Result</label><br>
     </tr>
     <tr>
         <td></td>
